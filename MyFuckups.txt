@@ -1,0 +1,100 @@
+<div className="comment">
+            <div className="comment__avi-container">
+              <img
+                className="comment__avi"
+                href="#"
+                /*{comment.image}*/ alt="user"
+              ></img>
+            </div>
+            <div className="comment__text-container">
+              <div className="comment__heading-container">
+                <p className="comment__name">{comment.name}</p>
+                <p className="comment__date">{comment.timestamp}</p>
+              </div>
+              <p className="comment__body">{comment.comment}</p>
+            </div>
+          </div>
+
+
+
+
+          {/*<SelectedVideo selectedVideoProp={this.state.selectedVideo} />
+
+           /* videos={this.state.videos}
+          videoDetailsID={this.state.selectedVideo.id}
+          otherVideosProp={this.state.allVideos}
+          selectedVideo={this.renderSelectedVideo}
+          selectedVideoID={this.state.selectedVideo.id}
+        />
+        */
+
+
+
+export const OtherVideos = ({ videos, videoDetailsID }) => {
+  const selectedVideo = videos.filter((video) => video.id === videoDetailsID);
+  const otherVideos = videos.filter((video) => video.id !== videoDetailsID);
+
+  return (
+    <div>
+    {otherVideos.map((video) => {
+      return (
+        <article onClick={(video) => selectedVideo(video.id)} className="preview">
+          <img id={video.id} src={video.image} alt={video.description} />
+          <div className="preview__container">
+            <h3>{video.title}</h3>
+            <p>{video.channel}</p>
+          </div>
+        </article>
+    );
+  })}
+</div>
+    // console.log(newArray)
+);
+};
+
+ <div className="otherVideos__section">
+//       <div className="otherVideos__heading-container">
+//         <p className="otherVideos__heading">next videos</p>
+//       </div>
+//       <div className="otherVideos__item-container">
+//         <div className="otherVideos__thumbnail-container">
+//           <img className="otherVideos__thumbnail" alt="" src={"placeholder"}></img>
+//         </div>
+//         <div className="otherVideos__text-container">
+//           <div className="otherVideos__heading-container">
+//             Title of this radical extreme sports video</div> 
+//             <div className="otherVideos__author-container">
+//               Tyler Rad-Dude
+//             </div>
+//         </div>
+//       </div>
+//     </div>
+// 
+//     </div>
+
+
+
+
+
+
+
+
+
+
+
+   {nonSelected.map(video) => {
+        return (
+          <div className="otherVideo__item-container"
+          onClick={() => selectedVideo(video.id)}>
+          <div className="otherVideo__image-container">
+            <img
+            className="otherVideo__image"
+            src={video.image}
+            alt=""
+          </div>
+          
+          </div>
+        )
+      }}
+    </div>
+)} 

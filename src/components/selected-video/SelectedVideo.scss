@@ -1,0 +1,122 @@
+@import "../../styles/partials/global.scss";
+@import "../../styles/partials/variables.scss";
+@import "../../styles/partials/mixins.scss";
+
+.comments {
+  &__container {
+    padding: $sidePaddingMobile;
+    width: 90vw;
+  }
+
+  &__button {
+    @include button;
+    width: 75vw;
+  }
+  &__counter {
+    @include bodyCopy;
+    font-weight: 700;
+    margin-top: 0;
+  }
+  &__user-container {
+    display: flex;
+    flex-direction: row;
+  }
+  &__input {
+      width: 75vw;
+      height: 15vh;
+    &-container {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__comment {
+    &-container {
+      display: flex;
+      flex-direction: row;
+      border-top: solid;
+      border-bottom: solid;
+      border-color: $divider;
+      border-width: 1px;
+      margin-top: $sidePaddingMobile;
+      padding-top: $sidePaddingMobile;
+      padding-bottom: $sidePaddingMobile;
+    }
+  }
+
+  &__avi {
+    &-container {
+      width: 15vw;
+    }
+  }
+  &__content-container {
+    width: 75vw;
+  }
+  &__details-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__post-container {
+    margin-top: 8px;
+    @include bodyCopy;
+  }
+
+  &__name {
+    @include bodyCopy;
+    font-weight: 700;
+    margin: 0;
+  }
+  &__date {
+    @include labels;
+    margin: 0;
+  }
+}
+.selectedVideo {
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__heading {
+    @include pageHeading;
+
+    &-container {
+      width: 90vw;
+      display: flex;
+    }
+  }
+
+  &__description {
+    padding: $sidePaddingMobile;
+    @include bodyCopy;
+  }
+
+  &__details {
+    height: 35%;
+    @include labels;
+    display: flex;
+    align-items: center;
+
+    &-container {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      justify-content: center;
+      height: 10vh;
+      width: 90vw;
+      margin: 0;
+      border-top: solid;
+      border-bottom: solid;
+      border-color: $divider;
+      border-width: 1px;
+    }
+    &-author {
+      margin: 0;
+      @include bodyCopy;
+      font-weight: 700;
+    }
+  }
+  &__image{
+    width: 100vw;
+  }
+}

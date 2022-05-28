@@ -1,0 +1,36 @@
+@import "../../styles/partials/global.scss";
+@import "../../styles/partials/variables.scss";
+@import "../../styles/partials/mixins.scss";
+
+.otherVideos {
+  display: flex;
+  justify-content: center;
+
+  &__section {
+    width: 90vw;
+  }
+  &__heading {
+    margin: 0;
+    @include sectionHeading;
+    color: $secondary;
+    text-transform: uppercase;
+    &-container {
+      display: flex;
+    }
+  }
+  &__item-container{
+    display: flex;
+  }
+  &__thumbnail{
+    width: 30vw;
+    &-container{
+      width: 30vw;
+    }
+  }
+  &__text-container{
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    @include bodyCopy
+  }
+}
