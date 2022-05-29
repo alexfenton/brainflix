@@ -9,12 +9,9 @@ import likes from "../../assets/Icons/likes.svg"
 
 
 const SelectedVideo = (props) => {
-  console.log(props.selectedVideo.comments);
-  console.log(props.title);
-  const epoch = props.selectedVideo.timestamp*1000
-  const humanDate = (epoch) => {
-    return epoch.toLocaleString()
-  };
+  const longDate = new Date(props.selectedVideo.timestamp);
+  const commentDate = new Date(comment.timestamp)  
+  
   return (
     <div className="selectedVideo__section">
       <div className="selectedVideo__image-container">
@@ -36,7 +33,7 @@ const SelectedVideo = (props) => {
         <div className="selectedVideo__details">
           
           <p className="selectedVideo__timestamp">
-            {props.selectedVideo.timestamp}
+            {longDate.toLocaleDateString('en-US')}
           </p>
         </div>
         <div className="selectedVideo__details">
@@ -90,7 +87,7 @@ const SelectedVideo = (props) => {
                   <p className="comments__name"> {comment.name}</p>
                 </div>
                 <div className="comments__date-container">
-                  <p className="comments__date"> {comment.timestamp}</p>
+                  <p className="comments__date"> {commentDate.toLocaleDateString('en-US')}</p>
                 </div>
               </div>
               <div className="comments__post-container">
