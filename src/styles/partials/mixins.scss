@@ -10,13 +10,29 @@
         text-transform: uppercase;
         font-weight: 900;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: center;
+        padding-left: $sidePaddingMobile;
+}
+
+@mixin input {
+        all: unset;
+        color: $primary;
+        border: solid;
+        border-width: 1px;
+        border-color: $divider;
+        border-radius: 6px;
+        background-color: $formBackground;
+        &::placeholder{
+                color: $primary;
+        }
+        display: flex;
+        
 }
 
 @mixin pageHeading {
-        font-size: 1.5rem;
-        line-height: 2rem;
+        font-size: 1.75rem;
+        line-height: 2.5rem;
         font-weight: 700;
         color: $primary;
 
@@ -55,4 +71,12 @@
         color: $secondary;
                 
 }
+
+@mixin avatar{
+        width: 13vw;
+        height: 13vw;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: left;
+    }
 

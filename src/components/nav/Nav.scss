@@ -3,24 +3,39 @@
 
 .nav{
     background-color: $background;
-    height: 50vw;
+    height: 45vw;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: $sidePaddingMobile;
-    
+    align-items: center;
+    &__logo{
+        width: 45vw;
+    }
+
     &__button{
         @include button;
-        width: 90vw;
+        width: 85vw;
     }
 
     &__search{
         &-container{
             display: flex;
             flex-direction: row;
+            width: 90vw;
+            justify-content: space-between;
+            align-items: center;
         }
         &-bar{
-            width: 65vw;
+            @include input;
+            width: 70vw;
+            height: 3rem;
+            display: flex;
+
         }
     }
+    &__avatar{
+        @include avatar;
+    }
+    
 }

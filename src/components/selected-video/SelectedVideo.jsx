@@ -1,18 +1,28 @@
 import React from "react";
 import "./SelectedVideo.scss";
 import {displayComment} from "./sandbox"
+import userImage from "../../assets/Images/Mohan-muruge.jpg"
+import comment from "../../assets/Icons/add_comment.svg"
+import views from "../../assets/Icons/views.svg"
+import likes from "../../assets/Icons/likes.svg"
+
+
 
 const SelectedVideo = (props) => {
   console.log(props.selectedVideo.comments);
   console.log(props.title);
+  const epoch = props.selectedVideo.timestamp*1000
+  const humanDate = (epoch) => {
+    return epoch.toLocaleString()
+  };
   return (
     <div className="selectedVideo__section">
       <div className="selectedVideo__image-container">
-        <img
+        <video
           className="selectedVideo__image"
-          src={props.selectedVideo.image}
-          alt="video"
-        ></img>
+          poster={props.selectedVideo.image}
+        ></video>
+        
       </div>
       <div className="selectedVideo__heading-container">
         <p className="selectedVideo__heading">{props.selectedVideo.title}</p>
@@ -24,14 +34,17 @@ const SelectedVideo = (props) => {
           </p>
         </div>
         <div className="selectedVideo__details">
+          
           <p className="selectedVideo__timestamp">
             {props.selectedVideo.timestamp}
           </p>
         </div>
         <div className="selectedVideo__details">
+          <img className="selectedVideo__icon"src={views} alt=""></img>
           {props.selectedVideo.views}
         </div>
         <div className="selectedVideo__details">
+        <img className="selectedVideo__icon"src={likes} alt=""></img>
           {props.selectedVideo.likes}
         </div>
       </div>
@@ -45,20 +58,27 @@ const SelectedVideo = (props) => {
           </p>
         </div>
         <div className="comments__user-container">
-          <div className="comments__avi-container">pic</div>
+          <div className="comments__avatar-container">
+            <img src={userImage} alt="You" className="comments__avatar"/>
+          </div>
           <div className="comments__input-container">
+            <div className="comments__input-heading">join the conversation</div>
             <input
               className="comments__input"
               placeholder="Add a new comment"
             ></input>
             <button className="comments__button">
               <img
-                className="button-icon"
-                href="../../assets/Icons/add_comment.svg"
+                className="button__icon"
+                src={comment}
                 alt=""
+                
               ></img>
-              comment
+              <p className="button__label">comment</p>
             </button>
+            <div className="test__comment">
+              {props.commentValue}
+            </div>
           </div>
         </div>
         {props.selectedVideo.comments.map((comment) => (
@@ -73,7 +93,8 @@ const SelectedVideo = (props) => {
                   <p className="comments__date"> {comment.timestamp}</p>
                 </div>
               </div>
-              <div className="comments__post-container">{comment.comment}</div>
+              <div className="comments__post-container">
+                <div className="comments__post">{comment.comment}</div></div>
             </div>
           </div>
         ))}

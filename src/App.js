@@ -10,6 +10,8 @@ class App extends Component {
   state = {
     videos: videos,
     selectedVideo: videoDetails[0],
+    commentValue: "test",
+    commentLine: [{ commentID: "", text: "test" }],
   };
 
   renderSelectedVideo = (id) => {
@@ -18,12 +20,22 @@ class App extends Component {
     this.setState({ selectedVideo: newSelectedVideo[0] });
     return newSelectedVideo;
   };
+  handleComment = (e) => {
+    this.setState({
+      commentValue: e.target.value,
+    });
+  };
   render() {
     // console.log(this.state.allVideos);
     return (
       <div className="App">
         <Nav />
-        <SelectedVideo selectedVideo={this.state.selectedVideo} />
+        <SelectedVideo
+          selectedVideo={this.state.selectedVideo}
+          commentValue={this.state.commentValue}
+          commentID={this.state.commentLine.commentID}
+          commentText={this.state.commentLine.text}
+        />
         <OtherVideos
           videos={this.state.videos}
           currentVideoID={this.state.selectedVideo.id}

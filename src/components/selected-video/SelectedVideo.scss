@@ -5,28 +5,47 @@
 .comments {
   &__container {
     padding: $sidePaddingMobile;
+    padding-top: 0;
     width: 90vw;
   }
 
   &__button {
     @include button;
-    width: 75vw;
+    width: 95%;
   }
   &__counter {
     @include bodyCopy;
     font-weight: 700;
     margin-top: 0;
+    margin-bottom: 1.5rem;
+    &-container{
+      display: flex;
+    }
   }
   &__user-container {
+    width: 100%;
+    padding-right: 0;
     display: flex;
     flex-direction: row;
   }
   &__input {
-      width: 75vw;
-      height: 15vh;
+      
+      @include input;
+      width: 100%;
+      height: 30vw;
+      margin-bottom: $sidePaddingMobile;
     &-container {
       display: flex;
       flex-direction: column;
+      width: 70vw;
+    }
+    &-heading {
+      display: flex;
+      margin-bottom: 0.3rem;
+      @include labels;
+      text-transform: uppercase;
+      font-weight: 700;
+      width: 100%;
     }
   }
   &__comment {
@@ -41,10 +60,18 @@
       padding-bottom: $sidePaddingMobile;
     }
   }
-
-  &__avi {
+  &__avi{
+    &-container{
+      width: 13vw;
+      margin-right: $sidePaddingMobile;
+    }
+  }
+  &__avatar {
+    @include avatar;
     &-container {
-      width: 15vw;
+      width: 13vw;
+      padding-top: 1.5rem;
+      margin-right: $sidePaddingMobile;
     }
   }
   &__content-container {
@@ -55,12 +82,17 @@
     flex-direction: row;
     justify-content: space-between;
   }
-  &__post-container {
+  &__post{
+    display: flex;
+    flex-direction: row;
+
+      &-container {
+    width: 100%;
     display: flex;
     margin-top: 8px;
     @include bodyCopy;
   }
-
+  }
   &__name {
     @include bodyCopy;
     font-weight: 700;
@@ -69,6 +101,7 @@
   &__date {
     @include labels;
     margin: 0;
+    
   }
 }
 .selectedVideo {
@@ -81,6 +114,7 @@
   }
   &__heading {
     @include pageHeading;
+    display: flex;
 
     &-container {
       width: 90vw;
@@ -98,13 +132,15 @@
     @include labels;
     display: flex;
     align-items: center;
+    margin: 5rem, 0,0.5rem, 0;
+    
 
     &-container {
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
       justify-content: center;
-      height: 10vh;
+      height: 12vh;
       width: 90vw;
       margin: 0;
       border-top: solid;
@@ -120,5 +156,8 @@
   }
   &__image{
     width: 100vw;
+  }
+  &__icon{
+    margin-right: 0.5rem;
   }
 }
