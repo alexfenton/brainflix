@@ -9,7 +9,8 @@ export const OtherVideos = ({ videos, currentVideoID, selectedVideo }) => {
       </div>
       {nonSelected.map((video) => {
         return (
-          <div className="otherVideos__item-container">
+          <div className="otherVideos__item-container"
+          onClick={()=>selectedVideo(video.id)}>
             <div className="otherVideos__thumbnail-container">
               <img
                 className="otherVideos__thumbnail"
@@ -32,7 +33,6 @@ export const OtherVideos = ({ videos, currentVideoID, selectedVideo }) => {
           </div>
         );
       })}
-      ;
     </div>
   );
 };

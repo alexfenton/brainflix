@@ -7,7 +7,10 @@
   justify-content: center;
 
   &__section {
-    width: 90vw;
+    padding: $sidePaddingMobile;
+    padding-top: (0.5 * $sidePaddingMobile);
+    width: 100vw;
+    margin: 0;
   }
   &__heading {
     margin: 0;
@@ -16,21 +19,37 @@
     text-transform: uppercase;
     &-container {
       display: flex;
+      margin-bottom: $sidePaddingMobile;
     }
   }
-  &__item-container{
+  &__item-container {
     display: flex;
+    margin-bottom: 0.5rem;
   }
-  &__thumbnail{
-    width: 30vw;
-    &-container{
+  &__thumbnail {
+    width: 35vw;
+    height: 12vh;
+    border-radius: 6px;
+    object-fit: cover;
+    image &-container {
       width: 30vw;
     }
   }
-  &__text-container{
+  &__channel {
+    margin: 0;
+  }
+  &__title {
+    margin: 0;
+    font-weight: bold;
+    &-container {
+      align-self: start;
+    }
+  }
+  &__text-container {
     width: 60vw;
     display: flex;
     flex-direction: column;
-    @include bodyCopy
+    align-items: flex-start;
+    @include bodyCopy;
   }
 }

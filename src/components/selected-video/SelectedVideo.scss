@@ -37,7 +37,6 @@
       border-bottom: solid;
       border-color: $divider;
       border-width: 1px;
-      margin-top: $sidePaddingMobile;
       padding-top: $sidePaddingMobile;
       padding-bottom: $sidePaddingMobile;
     }
@@ -57,6 +56,7 @@
     justify-content: space-between;
   }
   &__post-container {
+    display: flex;
     margin-top: 8px;
     @include bodyCopy;
   }
@@ -76,6 +76,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100vw;
+    margin: 0;
   }
   &__heading {
     @include pageHeading;

@@ -1,5 +1,6 @@
 import React from "react";
 import "./SelectedVideo.scss";
+import {displayComment} from "./sandbox"
 
 const SelectedVideo = (props) => {
   console.log(props.selectedVideo.comments);
@@ -60,26 +61,22 @@ const SelectedVideo = (props) => {
             </button>
           </div>
         </div>
-        {props.selectedVideo.comments.map((comment)=>
-        <div className="comments__comment-container">
-          <div className="comments__avi-container">pic</div>
-          <div className="comments__content-container">
-            <div className="comments__details-container">
-              <p className="comments__name"> {comment.name}</p>
-              <p className="comments__date"> {comment.timestamp}</p>
-            </div>
-            <div className="comments__post-container">
-              {comment.comment}
+        {props.selectedVideo.comments.map((comment) => (
+          <div className="comments__comment-container">
+            <div className="comments__avi-container">pic</div>
+            <div className="comments__content-container">
+              <div className="comments__details-container">
+                <div className="comments__name-container">
+                  <p className="comments__name"> {comment.name}</p>
+                </div>
+                <div className="comments__date-container">
+                  <p className="comments__date"> {comment.timestamp}</p>
+                </div>
+              </div>
+              <div className="comments__post-container">{comment.comment}</div>
             </div>
           </div>
-        </div>
-        )}      
-
-
-
-
-
-
+        ))}
       </div>
       {/* {props.selectedVideoProp.comments.map((comment) => {
         return (
@@ -89,6 +86,5 @@ const SelectedVideo = (props) => {
     </div>
   );
 };
-
 
 export default SelectedVideo;
