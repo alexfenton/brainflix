@@ -1,4 +1,4 @@
-import "./OtherVideos.scss";
+     import "./OtherVideos.scss";
 
 export const OtherVideos = ({ videos, currentVideoID, selectedVideo }) => {
   const nonSelected = videos.filter((video) => video.id !== currentVideoID);

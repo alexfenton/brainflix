@@ -6,11 +6,12 @@ import comment from "../../assets/Icons/add_comment.svg"
 import views from "../../assets/Icons/views.svg"
 import likes from "../../assets/Icons/likes.svg"
 
-
+const commentPostHandler = () =>{
+  console.log("test");
+}
 
 const SelectedVideo = (props) => {
   const longDate = new Date(props.selectedVideo.timestamp);
-  const commentDate = new Date(comment.timestamp)  
   
   return (
     <div className="selectedVideo__section">
@@ -69,7 +70,7 @@ const SelectedVideo = (props) => {
                 className="button__icon"
                 src={comment}
                 alt=""
-                
+                onClick={commentPostHandler}
               ></img>
               <p className="button__label">comment</p>
             </button>
@@ -78,7 +79,9 @@ const SelectedVideo = (props) => {
             </div>
           </div>
         </div>
-        {props.selectedVideo.comments.map((comment) => (
+        {props.selectedVideo.comments.map((comment) => {
+            const commentDate = new Date(comment.timestamp) 
+          return (
           <div className="comments__comment-container">
             <div className="comments__avi-container">pic</div>
             <div className="comments__content-container">
@@ -94,7 +97,8 @@ const SelectedVideo = (props) => {
                 <div className="comments__post">{comment.comment}</div></div>
             </div>
           </div>
-        ))}
+          )
+})}
       </div>
       {/* {props.selectedVideoProp.comments.map((comment) => {
         return (
