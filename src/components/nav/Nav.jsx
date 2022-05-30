@@ -10,6 +10,7 @@ function Nav() {
       <img className="nav__logo" src={logo} alt="Home"></img>
       <div className="nav__search-container">
         <div className="nav__search-bar-container">
+          <i src={search}></i>{" "}
           <input className="nav__search-bar" placeholder="Search"></input>
         </div>
         <div className="nav__avatar-container">
@@ -21,6 +22,9 @@ function Nav() {
         <img className="button__icon" src={upload} alt="Upload"></img>
         <p className="button__label">Upload</p>
       </button>
+      <div className="nav__avatar-tablet-container">
+        <img className="nav__avatar-tablet" src={userImage} alt="Upload"></img>
+      </div>
     </nav>
   );
 }

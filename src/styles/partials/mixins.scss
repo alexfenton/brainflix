@@ -1,5 +1,5 @@
 @import "./variables.scss";
-
+@import "./breakpoints.scss";
 
 @mixin button {
         all: unset;
@@ -13,6 +13,9 @@
         justify-content: flex-start;
         align-items: center;
         padding-left: $sidePaddingMobile;
+        @include tablet{
+                font-size: 0.75rem;
+        }
 }
 
 @mixin input {
@@ -78,5 +81,9 @@
         border-radius: 50%;
         object-fit: cover;
         object-position: left;
+        @include tablet {
+                width: 6vw;
+                height: 6vw;
+        }
     }
 

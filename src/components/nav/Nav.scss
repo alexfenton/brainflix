@@ -1,41 +1,76 @@
 @import "../../styles/partials/mixins.scss";
 @import "../../styles/partials/variables.scss";
+@import "../../styles/partials/breakpoints.scss";
 
-.nav{
-    background-color: $background;
-    height: 45vw;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding: $sidePaddingMobile;
-    align-items: center;
-    &__logo{
-        width: 45vw;
+.nav {
+  background-color: $background;
+  height: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: $sidePaddingMobile;
+  align-items: center;
+  @include tablet {
+    flex-direction: row;
+    height: 7vw;
+    justify-content: normal;
+    padding-left: $sidePaddingTablet;
+    padding-right: $sidePaddingTablet;
+  }
+  &__logo {
+    width: 35vw;
+    @include tablet {
+      width: 15vw;
+      margin-right: 10vw;
     }
+  }
 
-    &__button{
-        @include button;
-        width: 85vw;
+  &__button {
+    @include button;
+    width: 85vw;
+    @include tablet {
+      width: 20vw;
+      height: 6vw;
+      margin-right: $sidePaddingTablet;
     }
+  }
 
-    &__search{
-        &-container{
-            display: flex;
-            flex-direction: row;
-            width: 90vw;
-            justify-content: space-between;
-            align-items: center;
-        }
-        &-bar{
-            @include input;
-            width: 70vw;
-            height: 3rem;
-            display: flex;
-
-        }
+  &__search {
+    &-container {
+      display: flex;
+      flex-direction: row;
+      width: 90vw;
+      justify-content: space-between;
+      align-items: normal;
+      @include tablet{
+        width: auto;
+      }
     }
-    &__avatar{
-        @include avatar;
+    &-bar {
+      @include input;
+      width: 70vw;
+      height: 3rem;
+      display: flex;
+      @include tablet {
+        width: 30vw;
+        margin-right: $sidePaddingTablet;
+      }
     }
-    
+  }
+  &__avatar {
+    @include avatar;
+    @include tablet {
+      display: none;
+    }
+    &-tablet {
+      @include avatar;
+      display: none;
+      @include tablet {
+        display: flex;
+      }
+    }
+    &-container {
+      display: flex;
+    }
+  }
 }

@@ -1,10 +1,11 @@
 import { Component } from "react";
 import videos from "./data/videos.json";
 import videoDetails from "./data/video-details.json";
-import "./App.css";
+import "./App.scss";
 import SelectedVideo from "./components/selected-video/SelectedVideo";
 import { OtherVideos } from "./components/other-videos/OtherVideos";
 import Nav from "./components/nav/Nav";
+import SelectedVideoDesktop from "./components/selected-video/SelectedVideoDesktop";
 
 class App extends Component {
   state = {
@@ -30,17 +31,20 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
-        <SelectedVideo
-          selectedVideo={this.state.selectedVideo}
-          commentValue={this.state.commentValue}
-          commentID={this.state.commentLine.commentID}
-          commentText={this.state.commentLine.text}
-        />
-        <OtherVideos
-          videos={this.state.videos}
-          currentVideoID={this.state.selectedVideo.id}
-          selectedVideo={this.renderSelectedVideo}
-        />
+        <div className="main">
+          {/* <SelectedVideoDesktop selectedVideo={this.state.selectedVideo} /> */}
+          <SelectedVideo
+            selectedVideo={this.state.selectedVideo}
+            commentValue={this.state.commentValue}
+            commentID={this.state.commentLine.commentID}
+            commentText={this.state.commentLine.text}
+          />
+          <OtherVideos
+            videos={this.state.videos}
+            currentVideoID={this.state.selectedVideo.id}
+            selectedVideo={this.renderSelectedVideo}
+          />
+        </div>
       </div>
     );
   }
