@@ -5,19 +5,18 @@
 .comments {
   &__container {
     padding: $sidePaddingMobile;
-    padding-top:0;
+    padding-top: 0;
     width: 90vw;
-    @include tablet {
-
+    @include desktop {
+      width: 100%;
     }
   }
 
   &__button {
     @include button;
     width: 95%;
-    @include tablet{
+    @include tablet {
       width: 20vw;
-      height: 45px;
     }
   }
   &__counter {
@@ -25,8 +24,9 @@
     font-weight: 700;
     margin-top: 0;
     margin-bottom: 1.5rem;
-    &-container{
+    &-container {
       display: flex;
+      width: 100%;
     }
   }
   &__user-container {
@@ -34,20 +34,21 @@
     padding-right: 0;
     display: flex;
     flex-direction: row;
-    
   }
   &__input {
-      
-      @include input;
+    @include input;
+    width: 100%;
+    height: 30vw;
+    margin-bottom: $sidePaddingMobile;
+    display: flex;
+    @include tablet {
+      width: 55vw;
+      height: 45px;
+    }
+    @include desktop {
       width: 100%;
-      height: 30vw;
-      margin-bottom: $sidePaddingMobile;
-      display: flex;
-      @include tablet{
-        width: 55vw;
-        height: 45px;
-      }
-      
+    }
+
     &-container {
       display: flex;
       flex-direction: column;
@@ -56,6 +57,9 @@
         flex-direction: row;
         width: 90vw;
         justify-content: space-between;
+      }
+      @include desktop {
+        width: 100%;
       }
     }
     &-heading {
@@ -88,11 +92,11 @@
       }
     }
   }
-  &__avi{
-    &-container{
+  &__avi {
+    &-container {
       width: 13vw;
       margin-right: $sidePaddingMobile;
-      @include tablet{
+      @include tablet {
         width: 6vw;
       }
     }
@@ -103,18 +107,16 @@
       width: 13vw;
       padding-top: 1.5rem;
       margin-right: $sidePaddingMobile;
-      @include tablet{
+      @include tablet {
         padding-top: 0;
         width: 6vw;
         margin-right: 1.5rem;
-
       }
-      
     }
   }
   &__content-container {
     width: 80%;
-    @include tablet{
+    @include tablet {
       width: 100%;
     }
   }
@@ -123,16 +125,16 @@
     flex-direction: row;
     justify-content: space-between;
   }
-  &__post{
+  &__post {
     display: flex;
     flex-direction: row;
 
-      &-container {
-    width: 100%;
-    display: flex;
-    margin-top: 8px;
-    @include bodyCopy;
-  }
+    &-container {
+      width: 100%;
+      display: flex;
+      margin-top: 8px;
+      @include bodyCopy;
+    }
   }
   &__name {
     @include bodyCopy;
@@ -142,8 +144,6 @@
   &__date {
     @include labels;
     margin: 0;
-    
-    
   }
 }
 .selectedVideo {
@@ -153,12 +153,15 @@
     align-items: center;
     width: 100vw;
     margin: 0;
+    @include desktop {
+      width: 40vw;
+    }
   }
   &__heading {
     @include pageHeading;
     display: flex;
-    @include tablet{
-    margin-bottom: 0;
+    @include tablet {
+      margin-bottom: 0;
     }
     &-container {
       width: 90vw;
@@ -170,7 +173,7 @@
     padding: $sidePaddingMobile;
     @include bodyCopy;
     display: flex;
-    @include tablet{
+    @include tablet {
       padding: $sidePaddingTablet;
     }
   }
@@ -180,8 +183,7 @@
     @include labels;
     display: flex;
     align-items: center;
-    margin: 5rem, 0,0.5rem, 0;
-    
+    margin: 5rem, 0, 0.5rem, 0;
 
     &-container {
       display: flex;
@@ -197,7 +199,7 @@
       border-bottom: solid;
       border-color: $divider;
       border-width: 1px;
-      @include tablet{
+      @include tablet {
         flex-direction: row;
         height: fit-content;
         padding-bottom: 0.5rem;
@@ -205,7 +207,9 @@
         border-top: 0;
         justify-content: space-between;
         align-items: center;
-
+      }
+      @include desktop {
+        width: 55vw;
       }
     }
     &-author {
@@ -214,14 +218,12 @@
       font-weight: 700;
     }
   }
-  &__image{
-    width: 100vw;
-  }
-  &__icon{
+
+  &__icon {
     margin-right: 0.5rem;
   }
-  &__timestamp{
-    @include tablet{
+  &__timestamp {
+    @include tablet {
       margin: 0;
       margin-right: 30vw;
     }

@@ -1,11 +1,14 @@
-@import './styles/partials/breakpoints.scss';
+@import "./styles/partials/breakpoints.scss";
 
-
-.main{
-    display: flex;
-    flex-direction: column;
-    @include desktop{
-        flex-direction: row;
-    }
-
+.App {
+  width: 100vw;
+}
+.main {
+  width: 50vw;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  @include desktop {
+    flex-direction: row;
+  }
 }

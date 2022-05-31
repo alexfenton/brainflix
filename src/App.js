@@ -5,7 +5,7 @@ import "./App.scss";
 import SelectedVideo from "./components/selected-video/SelectedVideo";
 import { OtherVideos } from "./components/other-videos/OtherVideos";
 import Nav from "./components/nav/Nav";
-import SelectedVideoDesktop from "./components/selected-video/SelectedVideoDesktop";
+import SelectedVideoHero from "./components/selected-video-hero/SelectedVideoDesktop";
 
 class App extends Component {
   state = {
@@ -31,8 +31,8 @@ class App extends Component {
     return (
       <div className="App">
         <Nav />
+        <SelectedVideoHero selectedVideo={this.state.selectedVideo} />
         <div className="main">
-          {/* <SelectedVideoDesktop selectedVideo={this.state.selectedVideo} /> */}
           <SelectedVideo
             selectedVideo={this.state.selectedVideo}
             commentValue={this.state.commentValue}

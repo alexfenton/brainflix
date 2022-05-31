@@ -5,23 +5,31 @@
 .nav {
   background-color: $background;
   height: 45vw;
+  width: 90vw;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: $sidePaddingMobile;
   align-items: center;
+  margin: 0;
+  padding-top: $sidePaddingMobile;
   @include tablet {
     flex-direction: row;
     height: 7vw;
-    justify-content: normal;
-    padding-left: $sidePaddingTablet;
-    padding-right: $sidePaddingTablet;
+    justify-content: space-around;
+    padding-bottom: $sidePaddingMobile;
+  }
+  @include desktop {
+    width: 50vw;
   }
   &__logo {
     width: 35vw;
     @include tablet {
       width: 15vw;
       margin-right: 10vw;
+      margin-left: 5vw;
+    }
+    @include desktop {
+      width: 10vw;
     }
   }
 
@@ -30,7 +38,6 @@
     width: 85vw;
     @include tablet {
       width: 20vw;
-      height: 6vw;
       margin-right: $sidePaddingTablet;
     }
   }
@@ -42,8 +49,11 @@
       width: 90vw;
       justify-content: space-between;
       align-items: normal;
-      @include tablet{
+      @include tablet {
         width: auto;
+      }
+      @include desktop {
+        width: 15vw;
       }
     }
     &-bar {
@@ -53,7 +63,7 @@
       display: flex;
       @include tablet {
         width: 30vw;
-        margin-right: $sidePaddingTablet;
+        margin-right: 1.5rem;
       }
     }
   }

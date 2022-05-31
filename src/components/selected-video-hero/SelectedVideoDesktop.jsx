@@ -1,8 +1,8 @@
 import React from "react";
-import "./SelectedVideo.scss";
+import "./SelectedVideoHero.scss";
 
 
-const SelectedVideoDesktop = (props) => {
+const SelectedVideoHero = (props) => {
   
   return (
     <div className="selectedVideo__section">
@@ -17,4 +17,4 @@ const SelectedVideoDesktop = (props) => {
   )
 };
 
-export default SelectedVideoDesktop;
+export default SelectedVideoHero;

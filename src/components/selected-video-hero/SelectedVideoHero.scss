@@ -1,0 +1,13 @@
+@import "../../styles/partials/breakpoints.scss";
+
+.selectedVideo {
+  &__image {
+    width: 100vw;
+    height: 70vw;
+    object-fit: cover;
+    object-position: center;
+    @include desktop {
+      height: 40vw;
+    }
+  }
+}

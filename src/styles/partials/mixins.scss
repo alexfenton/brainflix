@@ -2,88 +2,87 @@
 @import "./breakpoints.scss";
 
 @mixin button {
-        all: unset;
-        height: 12vw;
-        border-radius: 4px;
-        background-color: $primaryCTA;
-        color: $CTAText;
-        text-transform: uppercase;
-        font-weight: 900;
-        display: flex;
-        justify-content: flex-start;
-        align-items: center;
-        padding-left: $sidePaddingMobile;
-        @include tablet{
-                font-size: 0.75rem;
-        }
+  all: unset;
+  height: 12vw;
+  border-radius: 4px;
+  background-color: $primaryCTA;
+  color: $CTAText;
+  text-transform: uppercase;
+  font-weight: 900;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: $sidePaddingMobile;
+  @include tablet {
+    font-size: 0.75rem;
+    height: 6vw;
+  }
+  @include desktop {
+    height: 4vw;
+  }
 }
 
 @mixin input {
-        all: unset;
-        color: $primary;
-        border: solid;
-        border-width: 1px;
-        border-color: $divider;
-        border-radius: 6px;
-        background-color: $formBackground;
-        &::placeholder{
-                color: $primary;
-        }
-        display: flex;
-        
+  all: unset;
+  color: $primary;
+  border: solid;
+  border-width: 1px;
+  border-color: $divider;
+  border-radius: 6px;
+  background-color: $formBackground;
+  &::placeholder {
+    color: $primary;
+  }
+  display: flex;
 }
 
 @mixin pageHeading {
-        font-size: 1.75rem;
-        line-height: 2.5rem;
-        font-weight: 700;
-        color: $primary;
-
+  font-size: 1.75rem;
+  line-height: 2.5rem;
+  font-weight: 700;
+  color: $primary;
 }
 
 @mixin sectionHeading {
-        font-size: 1rem;
-        line-height: 1.25rem;
-        font-weight: 700;
-        color: $primary;
-
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+  color: $primary;
 }
-
 
 @mixin subHeading {
-        font-size: 0.8rem;
-        line-height: 1.125rem;
-        font-weight: 700;
-        color: $primary;
-
+  font-size: 0.8rem;
+  line-height: 1.125rem;
+  font-weight: 700;
+  color: $primary;
 }
 
-
 @mixin bodyCopy {
-        font-size: 1rem;
-        line-height: 1.5rem;
-        font-weight: 400;
-        color: $primary;
-
+  font-size: 1rem;
+  line-height: 1.5rem;
+  font-weight: 400;
+  color: $primary;
 }
 
 @mixin labels {
-        font-size: 1rem;
-        line-height: 1.25rem;
-        font-weight: 400;
-        color: $secondary;
-                
+  font-size: 1rem;
+  line-height: 1.25rem;
+  font-weight: 400;
+  color: $secondary;
 }
 
-@mixin avatar{
-        width: 13vw;
-        height: 13vw;
-        border-radius: 50%;
-        object-fit: cover;
-        object-position: left;
-        @include tablet {
-                width: 6vw;
-                height: 6vw;
-        }
-    }
-
+@mixin avatar {
+  width: 13vw;
+  height: 13vw;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: left;
+  @include tablet {
+    width: 6vw;
+    height: 6vw;
+  }
+  @include desktop {
+    width: 4vw;
+    height: 4vw;
+  }
+}
