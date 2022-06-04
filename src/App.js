@@ -9,13 +9,36 @@ import SelectedVideoHero from "./components/selected-video-hero/SelectedVideoDes
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SelectedVideoComments from "./components/selected-video-comments/SelectedVideoComments";
 import Upload from "./components/upload/Upload";
+import axios from "axios";
+import { isCompositeComponent } from "react-dom/test-utils";
+
+const api_key = '?api_key="2d876b55-e885-415f-8c94-d9c6445ce9e6"&url';
+const url = "https://project-2-api.herokuapp.com/videos";
+
+const getVids = () => {
+  axios.get(`${url}${api_key}`).then((response) => {
+    console.log(response);
+  });
+};
+var id = "84e96018-4022-434e-80bf-000ce4cd12b8";
+
+const getVidDetails = (id) => {
+  axios.get(`${url}/${id}${api_key}`).then((response) => {
+    console.log(response);
+  });
+};
+
+getVids();
+getVidDetails(id);
+
+// getVids().response.map(){
+//   console.log(data.title)
+// };
 
 class App extends Component {
   state = {
     videos: videos,
     selectedVideo: videoDetails[0],
-    commentValue: "test",
-    commentLine: [{ commentID: "", text: "test" }],
     chosenThumbnail:
       videoDetails[Math.floor(Math.random() * videoDetails.length)],
   };
@@ -26,11 +49,7 @@ class App extends Component {
     this.setState({ selectedVideo: newSelectedVideo[0] });
     return newSelectedVideo;
   };
-  handleComment = (e) => {
-    this.setState({
-      commentValue: e.target.value,
-    });
-  };
+
   render() {
     // console.log(this.state.allVideos);
     return (
@@ -47,9 +66,6 @@ class App extends Component {
                   />
                   <SelectedVideoComments
                     selectedVideo={this.state.selectedVideo}
-                    commentValue={this.state.commentValue}
-                    commentID={this.state.commentLine.commentID}
-                    commentText={this.state.commentLine.text}
                   />
                 </div>
                 <OtherVideos

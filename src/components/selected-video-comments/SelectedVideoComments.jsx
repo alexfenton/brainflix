@@ -32,7 +32,8 @@ const SelectedVideoComments = (props) => {
       {props.selectedVideo.comments.map((comment) => {
         const commentDate = new Date(comment.timestamp);
         return (
-          <div className="comments__comment-container">
+          <div className="comments__comment-container"
+          key={comment.id}>
             <div className="comments__avi-container">pic</div>
             <div className="comments__content-container">
               <div className="comments__details-container">

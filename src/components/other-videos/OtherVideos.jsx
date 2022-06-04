@@ -10,6 +10,7 @@ export const OtherVideos = ({ videos, currentVideoID, selectedVideo }) => {
       {nonSelected.map((video) => {
         return (
           <div className="otherVideos__item-container"
+          key={video.id}
           onClick={()=>selectedVideo(video.id)}>
             <div className="otherVideos__thumbnail-container">
               <img
