@@ -22,6 +22,26 @@
   }
 }
 
+@mixin buttonAlt {
+  all: unset;
+  height: 12vw;
+  background-color: $background;
+  color: $primaryCTA;
+  text-transform: uppercase;
+  font-weight: 900;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding-left: $sidePaddingMobile;
+  @include tablet {
+    font-size: 0.75rem;
+    height: 6vw;
+  }
+  @include desktop {
+    height: 4vw;
+  }
+}
+
 @mixin input {
   all: unset;
   color: $primary;

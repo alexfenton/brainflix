@@ -16,6 +16,8 @@ class App extends Component {
     selectedVideo: videoDetails[0],
     commentValue: "test",
     commentLine: [{ commentID: "", text: "test" }],
+    chosenThumbnail:
+      videoDetails[Math.floor(Math.random() * videoDetails.length)],
   };
 
   renderSelectedVideo = (id) => {
@@ -58,7 +60,7 @@ class App extends Component {
               </div>
             </Route>
             <Route path="/upload">
-              <Upload />
+              <Upload chosenThumbnail={this.state.chosenThumbnail} />
             </Route>
           </Switch>
         </div>

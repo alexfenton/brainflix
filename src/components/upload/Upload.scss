@@ -1,0 +1,61 @@
+@import "../../styles/partials/global.scss";
+@import "../../styles/partials/variables.scss";
+@import "../../styles/partials/mixins.scss";
+@import "../../styles/partials/breakpoints.scss";
+
+.upload {
+  &__section {
+    display: flex;
+    flex-direction: column;
+    padding: $sidePaddingMobile;
+    padding-top: 0;
+    border-top: solid;
+    border-width:1px;
+    border-color: $divider;
+    &-heading {
+      @include pageHeading;
+      margin-top: 24px;
+      margin-bottom: 24px;
+    }
+  }
+
+  &__input{
+      &-heading{
+      @include labels;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin: 0;
+  }
+  &-title{
+    @include input;
+    height: 3rem;
+    width: 100%;
+  }
+  &-description{
+    @include input;
+    height: 6rem;
+    width: 100%;
+  }
+}
+
+&__button{
+    &-publish{
+        @include button;
+        width: 88vw;
+    }
+    &-cancel{
+        @include buttonAlt;
+        width: 88vw;
+        justify-content: center;
+    }
+}
+&__image{
+    border-radius: 4px;
+    height: 50vw;
+    object-fit:cover;
+    object-position: center;
+    margin-top: 8px;
+    margin-bottom: 24px;
+    
+}
+}
