@@ -3,6 +3,16 @@
 @import "../../styles/partials/mixins.scss";
 @import "../../styles/partials/breakpoints.scss";
 .comments {
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+    margin: 0;
+    @include desktop {
+      width: 40vw;
+    }
+  }
   &__container {
     padding: $sidePaddingMobile;
     padding-top: 0;
@@ -144,88 +154,5 @@
   &__date {
     @include labels;
     margin: 0;
-  }
-}
-.selectedVideo {
-  &__section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100vw;
-    margin: 0;
-    @include desktop {
-      width: 40vw;
-    }
-  }
-  &__heading {
-    @include pageHeading;
-    display: flex;
-    @include tablet {
-      margin-bottom: 0;
-    }
-    &-container {
-      width: 90vw;
-      display: flex;
-    }
-  }
-
-  &__description {
-    padding: $sidePaddingMobile;
-    @include bodyCopy;
-    display: flex;
-    @include tablet {
-      padding: $sidePaddingTablet;
-    }
-  }
-
-  &__details {
-    height: 35%;
-    @include labels;
-    display: flex;
-    align-items: center;
-    margin: 5rem, 0, 0.5rem, 0;
-
-    &-container {
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      padding-top: 0.5rem;
-      padding-bottom: 0.5rem;
-      height: 12vh;
-      width: 90vw;
-      margin: 0;
-      border-top: solid;
-      border-bottom: solid;
-      border-color: $divider;
-      border-width: 1px;
-      @include tablet {
-        flex-direction: row;
-        height: fit-content;
-        padding-bottom: 0.5rem;
-        padding-top: $sidePaddingMobile;
-        border-top: 0;
-        justify-content: space-between;
-        align-items: center;
-      }
-      @include desktop {
-        width: 55vw;
-      }
-    }
-    &-author {
-      margin: 0;
-      @include bodyCopy;
-      font-weight: 700;
-    }
-  }
-
-  &__icon {
-    margin-right: 0.5rem;
-  }
-  &__timestamp {
-    @include tablet {
-      margin: 0;
-      margin-right: 30vw;
-    }
   }
 }

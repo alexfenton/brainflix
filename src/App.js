@@ -2,10 +2,13 @@ import { Component } from "react";
 import videos from "./data/videos.json";
 import videoDetails from "./data/video-details.json";
 import "./App.scss";
-import SelectedVideo from "./components/selected-video/SelectedVideo";
+import SelectedVideoDetails from "./components/selected-video-details/SelectedVideoDetails";
 import { OtherVideos } from "./components/other-videos/OtherVideos";
 import Nav from "./components/nav/Nav";
 import SelectedVideoHero from "./components/selected-video-hero/SelectedVideoDesktop";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import SelectedVideoComments from "./components/selected-video-comments/SelectedVideoComments";
+import Upload from "./components/upload/Upload";
 
 class App extends Component {
   state = {
@@ -29,23 +32,37 @@ class App extends Component {
   render() {
     // console.log(this.state.allVideos);
     return (
-      <div className="App">
-        <Nav />
-        <SelectedVideoHero selectedVideo={this.state.selectedVideo} />
-        <div className="main">
-          <SelectedVideo
-            selectedVideo={this.state.selectedVideo}
-            commentValue={this.state.commentValue}
-            commentID={this.state.commentLine.commentID}
-            commentText={this.state.commentLine.text}
-          />
-          <OtherVideos
-            videos={this.state.videos}
-            currentVideoID={this.state.selectedVideo.id}
-            selectedVideo={this.renderSelectedVideo}
-          />
+      <Router>
+        <div className="App">
+          <Nav />
+          <Switch>
+            <Route exact path="/">
+              <SelectedVideoHero selectedVideo={this.state.selectedVideo} />
+              <div className="main">
+                <div className="selectedVid">
+                  <SelectedVideoDetails
+                    selectedVideo={this.state.selectedVideo}
+                  />
+                  <SelectedVideoComments
+                    selectedVideo={this.state.selectedVideo}
+                    commentValue={this.state.commentValue}
+                    commentID={this.state.commentLine.commentID}
+                    commentText={this.state.commentLine.text}
+                  />
+                </div>
+                <OtherVideos
+                  videos={this.state.videos}
+                  currentVideoID={this.state.selectedVideo.id}
+                  selectedVideo={this.renderSelectedVideo}
+                />
+              </div>
+            </Route>
+            <Route path="/upload">
+              <Upload />
+            </Route>
+          </Switch>
         </div>
-      </div>
+      </Router>
     );
   }
 }

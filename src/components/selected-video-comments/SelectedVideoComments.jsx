@@ -1,41 +1,11 @@
 import React from "react";
-import "./SelectedVideo.scss";
+import "./SelectedVideoComments.scss";
 import userImage from "../../assets/Images/Mohan-muruge.jpg";
 import comment from "../../assets/Icons/add_comment.svg";
-import views from "../../assets/Icons/views.svg";
-import likes from "../../assets/Icons/likes.svg";
 
-const SelectedVideo = (props) => {
-  const longDate = new Date(props.selectedVideo.timestamp);
-
+const SelectedVideoComments = (props) => {
   return (
-    <div className="selectedVideo__section">
-      <div className="selectedVideo__heading-container">
-        <h2 className="selectedVideo__heading">{props.selectedVideo.title}</h2>
-      </div>
-      <div className="selectedVideo__details-container">
-        <div className="selectedVideo__details">
-          <p className="selectedVideo__details-author">
-            By {props.selectedVideo.channel}
-          </p>
-        </div>
-        <div className="selectedVideo__details">
-          <p className="selectedVideo__timestamp">
-            {longDate.toLocaleDateString("en-US")}
-          </p>
-        </div>
-        <div className="selectedVideo__details">
-          <img className="selectedVideo__icon" src={views} alt=""></img>
-          {props.selectedVideo.views}
-        </div>
-        <div className="selectedVideo__details">
-          <img className="selectedVideo__icon" src={likes} alt=""></img>
-          {props.selectedVideo.likes}
-        </div>
-      </div>
-      <div className="selectedVideo__description">
-        {props.selectedVideo.description}
-      </div>
+    <div className="comments__section">
       <div className="comments__container">
         <div className="comments__counter-container">
           <p className="comments__counter">
@@ -87,4 +57,4 @@ const SelectedVideo = (props) => {
   );
 };
 
-export default SelectedVideo;
+export default SelectedVideoComments;
