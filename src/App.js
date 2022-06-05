@@ -5,22 +5,23 @@ import "./App.scss";
 import SelectedVideoDetails from "./components/selected-video-details/SelectedVideoDetails";
 import { OtherVideos } from "./components/other-videos/OtherVideos";
 import Nav from "./components/nav/Nav";
-import SelectedVideoHero from "./components/selected-video-hero/SelectedVideoDesktop";
+import SelectedVideoHero from "./components/selected-video-hero/SelectedVideoHero";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import SelectedVideoComments from "./components/selected-video-comments/SelectedVideoComments";
 import Upload from "./components/upload/Upload";
 import axios from "axios";
-import { isCompositeComponent } from "react-dom/test-utils";
 
 const api_key = '?api_key="2d876b55-e885-415f-8c94-d9c6445ce9e6"&url';
 const url = "https://project-2-api.herokuapp.com/videos";
 
 const getVids = () => {
   axios.get(`${url}${api_key}`).then((response) => {
+    // var chosen = response.filter((item) => item.id === id);
+    // console.log(chosen);
     console.log(response);
   });
 };
-var id = "84e96018-4022-434e-80bf-000ce4cd12b8";
+var id = "25ce5d91-a262-4dcf-bb87-42b87546bcfa";
 
 const getVidDetails = (id) => {
   axios.get(`${url}/${id}${api_key}`).then((response) => {
@@ -28,17 +29,23 @@ const getVidDetails = (id) => {
   });
 };
 
+const chosenVid = (id) => {
+  axios.get(`${url}${api_key}`).then((response) => {
+    var chosen = response.data.filter((item) => item.id === id);
+    console.log(chosen);
+    return chosen;
+  });
+};
+
 getVids();
 getVidDetails(id);
-
-// getVids().response.map(){
-//   console.log(data.title)
-// };
+chosenVid(id);
 
 class App extends Component {
   state = {
     videos: videos,
     selectedVideo: videoDetails[0],
+    chosenVid: "test",
     chosenThumbnail:
       videoDetails[Math.floor(Math.random() * videoDetails.length)],
   };

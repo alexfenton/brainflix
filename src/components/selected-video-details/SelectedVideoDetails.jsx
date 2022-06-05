@@ -7,7 +7,7 @@ const SelectedVideoDetails = (props) => {
   const longDate = new Date(props.selectedVideo.timestamp);
 
   return (
-    <div className="selectedVideo__section">
+    <section className="selectedVideo__container">
       <div className="selectedVideo__heading-container">
         <h2 className="selectedVideo__heading">{props.selectedVideo.title}</h2>
       </div>
@@ -34,7 +34,7 @@ const SelectedVideoDetails = (props) => {
       <div className="selectedVideo__description">
         {props.selectedVideo.description}
       </div>
-    </div>
+    </section>
   );
 };
 

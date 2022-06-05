@@ -4,11 +4,16 @@
   width: 100vw;
 }
 .main {
-  width: 50vw;
+  
   display: flex;
   flex-direction: column;
   margin: 0;
   @include desktop {
     flex-direction: row;
+  }
+}
+.selectedVid{
+  @include desktop{
+    width: 60%;
   }
 }

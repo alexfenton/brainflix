@@ -12,6 +12,7 @@
   align-items: center;
   margin: 0;
   padding-top: $sidePaddingMobile;
+  padding-left: $sidePaddingMobile;
   @include tablet {
     flex-direction: row;
     height: 7vw;

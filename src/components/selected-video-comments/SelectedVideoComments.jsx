@@ -16,9 +16,12 @@ const SelectedVideoComments = (props) => {
           <div className="comments__avatar-container">
             <img src={userImage} alt="You" className="comments__avatar" />
           </div>
-          <div className="comments__input-container">
-            <div className="comments__input-heading">join the conversation</div>
+          <form className="comments__input-container">
+          <label for="comments__input" className="comments__input-heading">join the conversation</label>
             <input
+            type="text"
+              name="comments__input"
+              id="comments__input"
               className="comments__input"
               placeholder="Add a new comment"
             ></input>
@@ -26,7 +29,7 @@ const SelectedVideoComments = (props) => {
               <img className="button__icon" alt="" src={comment}></img>
               <p className="button__label">comment</p>
             </button>
-          </div>
+          </form>
         </div>
       </div>
       {props.selectedVideo.comments.map((comment) => {
