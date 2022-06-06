@@ -3,7 +3,7 @@ import videos from "./data/videos.json";
 import videoDetails from "./data/video-details.json";
 import "./App.scss";
 import SelectedVideoDetails from "./components/selected-video-details/SelectedVideoDetails";
-import { OtherVideos } from "./components/other-videos/OtherVideos";
+import OtherVideos from "./components/other-videos/OtherVideos";
 import Nav from "./components/nav/Nav";
 import SelectedVideoHero from "./components/selected-video-hero/SelectedVideoHero";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -45,7 +45,6 @@ class App extends Component {
   state = {
     videos: videos,
     selectedVideo: videoDetails[0],
-    chosenVid: "test",
     chosenThumbnail:
       videoDetails[Math.floor(Math.random() * videoDetails.length)],
   };
@@ -64,11 +63,20 @@ class App extends Component {
         <div className="App">
           <Nav />
           <Switch>
-            <Route exact path="/">
-              <SelectedVideoHero selectedVideo={this.state.selectedVideo} />
-              <div className="main">
-                <div className="selectedVid">
-                  <SelectedVideoDetails
+            <Route
+              exact
+              path="/video/:videoID"
+              component={[
+                SelectedVideoHero,
+                SelectedVideoDetails,
+                SelectedVideoComments,
+                OtherVideos,
+              ]}
+            />
+            {/* SelectedVideoHero selectedVideo={this.state.selectedVideo} /> */}
+            {/* <div className="main">
+              <div className="selectedVid"> */}
+            {/* <SelectedVideoDetails
                     selectedVideo={this.state.selectedVideo}
                   />
                   <SelectedVideoComments
@@ -79,12 +87,12 @@ class App extends Component {
                   videos={this.state.videos}
                   currentVideoID={this.state.selectedVideo.id}
                   selectedVideo={this.renderSelectedVideo}
-                />
-              </div>
-            </Route>
-            <Route path="/upload">
-              <Upload chosenThumbnail={this.state.chosenThumbnail} />
-            </Route>
+                /> */}
+            {/* </div>
+            </div> */}
+            <Route path="/upload" component={Upload} />
+            {/* <Upload chosenThumbnail={this.state.chosenThumbnail} />
+            </Route> */}
           </Switch>
         </div>
       </Router>
