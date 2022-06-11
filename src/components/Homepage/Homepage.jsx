@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import "./Homepage.scss";
-import { api_key, api_url } from "../../utils/api";
-import axios from "axios";
-import { Link } from "react-router-dom";
 import { getSingleVideo } from "../../utils/api";
 import SelectedVideoDetails from "../selected-video-details/SelectedVideoDetails";
 import SelectedVideoComments from "../selected-video-comments/SelectedVideoComments";

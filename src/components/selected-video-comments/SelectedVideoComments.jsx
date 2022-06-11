@@ -1,6 +1,7 @@
 import React from "react";
 import "./SelectedVideoComments.scss";
 import userImage from "../../assets/Images/Mohan-muruge.jpg";
+import placeholder from "../../assets/Images/placeholder.png";
 import comment from "../../assets/Icons/add_comment.svg";
 
 const SelectedVideoComments = (props) => {
@@ -25,7 +26,7 @@ const SelectedVideoComments = (props) => {
               className="comments__input"
               placeholder="Add a new comment"
             ></input>
-            <button className="comments__button">
+            <button className="comments__button" type="submit">
               <img className="button__icon" alt="" src={comment}></img>
               <p className="button__label">comment</p>
             </button>
@@ -37,7 +38,9 @@ const SelectedVideoComments = (props) => {
         return (
           <div className="comments__comment-container"
           key={comment.id}>
-            <div className="comments__avi-container">pic</div>
+            <div className="comments__avi-container">
+            <img src={placeholder} alt="" className="comments__avatar" /> 
+              </div>
             <div className="comments__content-container">
               <div className="comments__details-container">
                 <div className="comments__name-container">
