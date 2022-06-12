@@ -1,7 +1,6 @@
 import "./OtherVideos.scss";
 import axios from "axios";
 import React, { Component } from "react";
-import { api_url, api_key } from "../../utils/api";
 import { NavLink } from "react-router-dom";
 
 export default class OtherVideos extends Component {
@@ -10,8 +9,9 @@ export default class OtherVideos extends Component {
   };
 
   componentDidMount() {
-    axios.get(`${api_url}${api_key}`).then((response) => {
-      this.setState({ videos: response.data });
+    axios.get(`http://localhost:8080/videos`).then((response) => {
+      this.setState({ videos: response.data});
+      console.log(response)
     });
   }
 

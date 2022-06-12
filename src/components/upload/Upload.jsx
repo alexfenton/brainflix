@@ -1,12 +1,13 @@
 import React, { Component } from "react";
 import "./Upload.scss";
-import videoDetails from "../../data/video-details.json";
 import { NavLink } from "react-router-dom";
 
+
 export default class Upload extends Component {
+  
+
   state = {
-    chosenThumbnail:
-      videoDetails[Math.floor(Math.random() * videoDetails.length)],
+    chosenThumbnail: '../../assets/Images/placeholder.png',
   };
   render() {
     return (
@@ -15,11 +16,11 @@ export default class Upload extends Component {
         <div className="input__container">
           <div className="image__container">
             <h3 className="upload__input-heading">video thumbnail</h3>
-            <img
+             <img
               className="upload__image"
-              src={this.state.chosenThumbnail.image}
+              src={'../../assets/Images/placeholder.png'}
               alt=""
-            ></img>
+            ></img> 
           </div>
           <form className="upload__form">
             <label for="upload__title" className="upload__input-heading">

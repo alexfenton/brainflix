@@ -1,6 +1,5 @@
 import { Component } from "react";
-import videos from "./data/videos.json";
-import videoDetails from "./data/video-details.json";
+
 import "./App.scss";
 import Nav from "./components/nav/Nav";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
@@ -8,22 +7,21 @@ import Upload from "./components/upload/Upload";
 import axios from "axios";
 import Homepage from "./components/Homepage/Homepage";
 
-const api_key = '?api_key="2d876b55-e885-415f-8c94-d9c6445ce9e6"&url';
-const url = "https://project-2-api.herokuapp.com/videos";
+const url = "https://localhost:8080/videos";
 
 const getVids = () => {
-  axios.get(`${url}${api_key}`).then((response) => {
+  axios.get(`${url}`).then((response) => {
     console.log(response);
   });
 };
 var id = "25ce5d91-a262-4dcf-bb87-42b87546bcfa";
 
 const getVidDetails = (id) => {
-  axios.get(`${url}/${id}${api_key}`).then((response) => {});
+  axios.get(`${url}/${id}`).then((response) => {});
 };
 
 const chosenVid = (id) => {
-  axios.get(`${url}${api_key}`).then((response) => {
+  axios.get(`${url}`).then((response) => {
     var chosen = response.data.filter((item) => item.id === id);
     return chosen;
   });
@@ -35,14 +33,15 @@ chosenVid(id);
 
 class App extends Component {
   state = {
-    videos: videos,
-    selectedVideo: videoDetails[0],
-    chosenThumbnail:
-      videoDetails[Math.floor(Math.random() * videoDetails.length)],
+    videos: [],
+    selectedVideo: [],
+    chosenThumbnail: [],
   };
 
   renderSelectedVideo = (id) => {
-    const newSelectedVideo = videoDetails.filter((video) => video.id === id);
+    const newSelectedVideo = getVidDetails().response.data.filter(
+      (video) => video.id === id
+    );
 
     this.setState({ selectedVideo: newSelectedVideo[0] });
     return newSelectedVideo;

@@ -13,10 +13,10 @@ export default class Homepage extends Component {
 
   componentDidMount() {
     const videoID = "25ce5d91-a262-4dcf-bb87-42b87546bcfa";
-
+  
     getSingleVideo(videoID).then((response) => {
       this.setState({ videoData: response.data });
-      console.log(response.data, "test");
+      console.log(response.data);
     });
   }
 
@@ -27,7 +27,7 @@ export default class Homepage extends Component {
     if (prevProps.match.params.videoID !== videoID) {
       getSingleVideo(videoID).then((response) => {
         this.setState({ videoData: response.data });
-        console.log(response.data, "test");
+        console.log(response.data);
       });
     }
   }

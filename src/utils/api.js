@@ -1,10 +1,9 @@
 import axios from "axios";
 
-const api_url = "https://project-2-api.herokuapp.com/videos/";
-const api_key = '?api_key="2d876b55-e885-415f-8c94-d9c6445ce9e6"&url';
+const api_url = "http://localhost:8080/videos";
 
 export const getSingleVideo = async (id) => {
-  return axios.get(`${api_url}${id}${api_key}`);
+  return axios.get(`http://localhost:8080/videos/${id}`);
 };
 
-export { api_key, api_url };
+export { api_url };
