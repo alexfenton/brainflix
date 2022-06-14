@@ -7,12 +7,10 @@ import Upload from "./components/upload/Upload";
 import axios from "axios";
 import Homepage from "./components/Homepage/Homepage";
 
-const url = "https://localhost:8080/videos";
+const url = "http://localhost:8080/videos";
 
 const getVids = () => {
-  axios.get(`${url}`).then((response) => {
-    console.log(response);
-  });
+  axios.get(`${url}`).then((response) => {});
 };
 var id = "25ce5d91-a262-4dcf-bb87-42b87546bcfa";
 

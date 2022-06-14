@@ -11,12 +11,10 @@ export default class OtherVideos extends Component {
   componentDidMount() {
     axios.get(`http://localhost:8080/videos`).then((response) => {
       this.setState({ videos: response.data});
-      console.log(response)
     });
   }
 
   render() {
-    console.log(this.state.videos);
     const nonSelected = this.state.videos.filter(
       (video) => video.id !== this.state.selectedVideo
     );

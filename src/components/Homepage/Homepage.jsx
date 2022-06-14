@@ -16,18 +16,14 @@ export default class Homepage extends Component {
   
     getSingleVideo(videoID).then((response) => {
       this.setState({ videoData: response.data });
-      console.log(response.data);
     });
   }
 
   componentDidUpdate(prevProps) {
     const videoID = this.props.match.params.videoID;
-    console.log(this.props.match);
-    console.log(videoID, "video ID");
     if (prevProps.match.params.videoID !== videoID) {
       getSingleVideo(videoID).then((response) => {
         this.setState({ videoData: response.data });
-        console.log(response.data);
       });
     }
   }
@@ -37,7 +33,6 @@ export default class Homepage extends Component {
       return;
     }
     const { image } = this.state.videoData;
-    console.log(this.state.videoData, "test");
     return (
       <div className="selectedVideo__section">
         <div className="selectedVideo__image-container">
